@@ -6,9 +6,8 @@
 
     <TextView
         android:id="@+id/name_text"
+        style="@style/NameStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/name"
-        android:textAlignment="center"
-        style="@style/NameStyle" />
+        android:text="@string/name" />
 </LinearLayout>
