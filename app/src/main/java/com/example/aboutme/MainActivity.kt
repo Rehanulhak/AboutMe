@@ -15,12 +15,16 @@ import org.w3c.dom.Text
 class MainActivity: AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private val myName: MyName = MyName("Rehan Ul Haq")
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding.myName = myName
+
         //findViewById<Button>(R.id.button).setOnClickListener {
         //    addNickname(it)
         //}
@@ -31,11 +35,12 @@ class MainActivity: AppCompatActivity() {
 
     private fun addNickname(view: View) {
         binding.apply {
-            nickText.text = edittextNickname.text
+            myName?.nickname = edittextNickname.text.toString()
             invalidateAll()
             edittextNickname.visibility = View.GONE
             button.visibility = View.GONE
             nickText.visibility = View.GONE
+            nicknameTextView.visibility = View.VISIBLE
         }
 
         // Hide the keyboard.
